@@ -453,7 +453,9 @@ var ImageGallery = function (_React$Component) {
       var zIndex = 1;
 
       if (this.props.infinite) {
-        if (currentIndex === 0 && index === totalSlides) {
+        if (currentIndex === 0 && totalSlides === 0) {
+          translateX = offsetPercentage;
+        } else if (currentIndex === 0 && index === totalSlides) {
           // make the last slide the slide before the first
           translateX = -100 + offsetPercentage;
         } else if (currentIndex === totalSlides && index === 0) {
